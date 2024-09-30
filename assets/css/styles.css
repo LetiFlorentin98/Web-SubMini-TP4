@@ -1060,6 +1060,7 @@ footer {
         opacity: 1;
         visibility: visible;
         gap: 32px;
+        height: 100vh;
     }
 
     .nav-menu {
