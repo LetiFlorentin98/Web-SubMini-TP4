@@ -1033,6 +1033,7 @@ footer {
 
     .navbar-cerrar {
         color: #c0c0c0;
+        font-size: 40px !important;
     }
 
     .navbar {
@@ -1057,7 +1058,7 @@ footer {
     .navbar.visible {
         opacity: 1;
         visibility: visible;
-        gap: 30px;
+        gap: 32px;
     }
 
     .nav-menu {
@@ -1085,7 +1086,8 @@ footer {
     .navbar .nav-menu {
         flex-direction: column;
         align-items: center;
-        gap: 60px;
+        gap: 32px;
+        margin: 0 auto;
     }
 
     .navbar .nav-menu li {
