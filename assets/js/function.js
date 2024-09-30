@@ -211,38 +211,6 @@ function moveRight() {
 
 window.onload = updateSlider;
 
-/*const slider = document.querySelector('.slider-container');
-let isDown = false; // Indica si el mouse está presionado
-let startX; // Posición inicial del mouse
-let scrollLeft; // Posición de desplazamiento inicial
-
-slider.addEventListener('mousedown', (e) => {
-    isDown = true; // El mouse está presionado
-    startX = e.pageX - slider.offsetLeft; // Guardar la posición inicial
-    scrollLeft = slider.scrollLeft; // Guardar la posición de desplazamiento actual
-    slider.style.cursor = 'grabbing'; // Cambiar el cursor para indicar arrastre
-});
-
-slider.addEventListener('mouseleave', () => {
-    isDown = false; // Detener el arrastre
-    slider.style.cursor = 'grab'; // Cambiar el cursor de nuevo
-});
-
-slider.addEventListener('mouseup', () => {
-    isDown = false; // Detener el arrastre
-    slider.style.cursor = 'grab'; // Cambiar el cursor de nuevo
-});
-
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return; // Si el mouse no está presionado, no hacer nada
-    e.preventDefault(); // Evitar la selección de texto
-    const x = e.pageX - slider.offsetLeft; // Nueva posición del mouse
-    const walk = (x - startX) * 2; // Cuánto desplazarse (ajusta la velocidad aquí)
-    slider.scrollLeft = scrollLeft - walk; // Mover el scroll
-});*/
-
-// Asegúrate de que este código solo se ejecute cuando estés en la sección de video
-
 function toggleMenu(element) {
     const allTitles = document.querySelectorAll('.footer-bottom-mobile .footer-title');
     
