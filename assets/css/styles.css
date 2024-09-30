@@ -15,7 +15,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-    /*display: none; QUITARLE EL DISPLAY NONE*/
+    display: none; /*QUITARLE EL DISPLAY NONE*/
     width: 14px;
     background: transparent;
 }
@@ -1444,6 +1444,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-weight: 600 !important;
     }
 
     .content-footer {
