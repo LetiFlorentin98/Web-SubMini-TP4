@@ -1057,6 +1057,7 @@ footer {
     .navbar.visible {
         opacity: 1;
         visibility: visible;
+        gap: 30px;
     }
 
     .nav-menu {
@@ -1084,6 +1085,7 @@ footer {
     .navbar .nav-menu {
         flex-direction: column;
         align-items: center;
+        gap: 60px;
     }
 
     .navbar .nav-menu li {
