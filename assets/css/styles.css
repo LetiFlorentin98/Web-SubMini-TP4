@@ -1024,6 +1024,7 @@ footer {
         padding: 8px 40px;
         height: 10vw;
         border-radius: 100px;
+        top: 20px;
     }
 
     .navbar-toggler,
@@ -1049,7 +1050,7 @@ footer {
         position: absolute;
         background-color: #050505;
         box-shadow: 0 2px 16px 0px rgba(0, 0, 0, 0.2);
-        top: -24px;
+        top: -20px;
         left: -20px;
         right: -20px;
         height: 100vh;
