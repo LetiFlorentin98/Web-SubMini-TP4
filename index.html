@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="icon" type="image/jpg" href="assets/img/favicon.png" />
@@ -9,8 +10,13 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@100;200;300;400;500;600;700;800;900&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
+
 </head>
 
 <body>
@@ -32,6 +38,9 @@
     </header>
 
     <main>
+
+        <!-- Inicio -->
+
         <section id="inicio">
             <div class="contenido-introductorio">
                 <h1>Escuchá cada detalle y sentí cada emoción</h1>
@@ -42,10 +51,15 @@
             </a>
         </section>
 
+        <!-- Detalles -->
+
         <section id="detalles">
             <div class="detalles-contenido">
-                <h2>Liberá todo el poder de Sonos</h2>
-                <h4>Descubre las características que hacen del Sub Mini la elección perfecta para tu hogar.</h4>
+                <h4 class="detalles-subtitle-mobile">Sub Mini</h4>
+                <div class="divider"></div>
+                <h2 class="detalles-title-mobile">Liberá todo el poder</h2>
+                <h2 class="detalles-title-desktop">Liberá todo el poder del Sub Mini</h2>
+                <h4>Descubrí de por qué es la elección perfecta para tu hogar.</h4>
             </div>
             <div class="cards-container">
                 <article class="caracteristica">
@@ -83,6 +97,7 @@
         </section>
 
         <!-- Sonido -->
+
         <section id="sonido">
             <div class="volumen">
                 <figure>
@@ -92,8 +107,7 @@
                     <h2>Potencia interna</h2>
                     <h4>
                         Dentro del gabinete acústicamente sellado, dos woofers de diseño exclusivo generan todo el
-                        espectro
-                        de frecuencias bajas de un subwoofer mucho más grande.
+                        espectro de frecuencias bajas de un subwoofer mucho más grande.
                     </h4>
                 </article>
             </div>
@@ -232,15 +246,25 @@
             </article>
         </section>
 
+        <!-- Video -->
+
+        <section class="video">
+            <div class="content-video">
+                <h4>Sub Mini</h4>
+                <div class="divider"></div>
+                <h2>Viví el poder del sonido en su forma más compacta</h2>
+            </div>
+        </section>
+
         <!-- App -->
 
         <section id="conectividad">
             <div class="app">
                 <article>
-                    <h2>Tu llave de acceso a la máxima experiencia sonora</h2>
+                    <h2>Tu llave de acceso a la mejor experiencia sonora</h2>
                     <h4>
-                        La app Sonos se conecta a todos tus servicios de streaming favoritos para reproducir música,
-                        podcasts y otros, lo que te facilita navegar y reproducir todo el contenido que 
+                        La app Sonos se conecta a todos tus servicios de streaming favoritos para reproducir música y
+                        podcasts, lo que te facilita navegar y reproducir todo el contenido que
                         más te gusta.
                     </h4>
                     <div class="buttons">
@@ -264,7 +288,7 @@
 
         <section id="compatibilidad">
             <div class="titulo-general">
-                <h2>Personalizá tu sistema de audio</h2>
+                <h2>Adaptá tu sistema de sonido a tu estilo</h2>
                 <h4>Mezclá y combiná productos que se adapten a todos los lugares y formas en que quieras escuchar.</h4>
             </div>
             <article class="slider">
@@ -305,25 +329,17 @@
             </article>
             <div class="bullets-container"></div>
         </section>
+
     </main>
 
     <footer id="footer">
         <div class="content-footer">
             <div class="footer-top">
-                <!-- Logo de Sonos y redes sociales -->
-                <div class="logo-social-container">
-                    <img class="sonos-logo-footer" alt="Sonos logo" src="assets/img/logo_footer.svg">
-                    <div class="social-icons">
-                        <img class="icon" alt="Facebook" src="assets/img/rrhh/facebook.svg">
-                        <img class="icon" alt="X" src="assets/img/rrhh/twitter.svg">
-                        <img class="icon" alt="Instagram" src="assets/img/rrhh/instagram.svg">
-                        <img class="icon" alt="Youtube" src="assets/img/rrhh/youtube.svg">
-                    </div>
-                </div>
+                <img class="sonos-logo-footer" alt="Sonos logo" src="assets/img/logo_footer.svg">
             </div>
 
-            <!-- Links del footer: ayuda, acerca de Sonos, categorías -->
-            <div class="footer-bottom">
+            <!-- Desktop -->
+            <div class="footer-bottom-desktop">
                 <ul class="footer-title-top">
                     <li class="footer-title">Ayuda</li>
                     <ul class="footer-list">
@@ -355,20 +371,78 @@
                 </ul>
             </div>
 
+            <!-- Mobile -->
+            <div class="footer-bottom-mobile">
+                <ul class="footer-title-top">
+                    <li class="footer-title" onclick="toggleMenu(this)">
+                        Ayuda <div class="icon"><span class="material-symbols-rounded">add</span></div>
+                    </li>
+                    <ul class="footer-list">
+                        <li><a href="#">Cuenta</a></li>
+                        <li><a href="#">Encontrá un local</a></li>
+                        <li><a href="#">Contactanos</a></li>
+                        <li><a href="#">Comunidad Sonos</a></li>
+                    </ul>
+                </ul>
+
+                <div class="divider divider-options"></div>
+
+                <ul class="footer-title-top">
+                    <li class="footer-title" onclick="toggleMenu(this)">
+                        Acerca de Sonos <div class="icon"><span class="material-symbols-rounded">add</span></div>
+                    </li>
+                    <ul class="footer-list">
+                        <li><a href="#">Nuestra empresa</a></li>
+                        <li><a href="#">Noticias</a></li>
+                        <li><a href="#">Innovación</a></li>
+                        <li><a href="#">App Sonos</a></li>
+                    </ul>
+                </ul>
+
+                <div class="divider divider-options"></div>
+
+                <ul class="footer-title-top">
+                    <li class="footer-title" onclick="toggleMenu(this)">
+                        Categorías <div class="icon"><span class="material-symbols-rounded">add</span></div>
+                    </li>
+                    <ul class="footer-list">
+                        <li><a href="#">Auriculares</a></li>
+                        <li><a href="#">Parlantes</a></li>
+                        <li><a href="#">Home theater</a></li>
+                        <li><a href="#">Barras de sonido</a></li>
+                    </ul>
+                </ul>
+
+                <div class="divider divider-options"></div>
+
+            </div>
+
         </div>
 
         <!-- Información de la cátedra y comisión -->
-        <div class="divider"></div>
+        <div class="divider divider-footer"></div>
 
+        </div>
         <div class="info-container">
-            <div>
-                <span class="info info-decoration">© Cátedra Belluccia</span>
+            <div class="info-datos">
+                <div>
+                    <span class="info info-decoration especial">© Cátedra Belluccia</span>
+                </div>
+                <div>
+                    <span class="info  info-decoration">Comisión 2</span>
+                </div>
+                <div>
+                    <span class="info">Leticia Florentin</span>
+                </div>
             </div>
-            <div>
-                <span class="info  info-decoration">Comisión 2</span>
-            </div>
-            <div>
-                <span class="info">Leticia Florentin</span>
+            <!-- Logo de Sonos y redes sociales -->
+            <div class="logo-social-container">
+                <div class="social-icons">
+                    <img class="icon-rrhh" alt="Facebook" src="assets/img/rrhh/facebook.svg">
+                    <img class="icon-rrhh" alt="X" src="assets/img/rrhh/twitter.svg">
+                    <img class="icon-rrhh" alt="Instagram" src="assets/img/rrhh/instagram.svg">
+                    <img class="icon-rrhh" alt="Youtube" src="assets/img/rrhh/youtube.svg">
+                </div>
             </div>
         </div>
     </footer>

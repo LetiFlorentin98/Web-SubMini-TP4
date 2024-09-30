@@ -1,44 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-menu a');
-    const logoLink = document.querySelector('.logo'); // Ajusta este selector al que tienes para el logo
+    const logoLink = document.querySelector('.logo');
     const arrowLink = document.querySelector('.content-arrow');
+    const navbar = document.getElementById('nav'); // Agregamos el navbar aquí
 
     navLinks.forEach(link => {
         link.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+            event.preventDefault();
 
-            const targetId = this.getAttribute('href').substring(1); // Obtener el id de la sección destino
-
-            const targetSection = document.getElementById(targetId); // Encontrar la sección por su id
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
-                // Desplazar suavemente a la sección destino
                 window.scrollTo({
                     top: targetSection.offsetTop,
                     behavior: 'smooth'
                 });
+                
+                // Cerrar el menú pop-up
+                navbar.classList.remove('visible'); // Cierra el menú
             }
         });
     });
 
     // Logo
     logoLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+        event.preventDefault();
         window.scrollTo({
-            top: 0, // Mover al principio
+            top: 0,
             behavior: 'smooth'
         });
     });
 
     // Arrow
     arrowLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+        event.preventDefault();
         window.scrollTo({
-            top: 0, // Mover al principio
+            top: 0,
             behavior: 'smooth'
         });
     });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -128,15 +131,15 @@ function updateSlider() {
     const sliderContainer = document.querySelector(".slider-container");
     const prevProductIndex = (currentIndex - 1 + products.length) % products.length;
     const nextProductIndex = (currentIndex + 1) % products.length;
-    const nextNextProductIndex = (currentIndex + 2) % products.length;
 
+    // Actualizar las cards con la clase `active` para el producto seleccionado
     sliderContainer.innerHTML = `
-        <div class="card">
+    <div class="card">
             <img src="${products[prevProductIndex].image}" alt="${products[prevProductIndex].title}">
             <h3>${products[prevProductIndex].title}</h3>
             <p>${products[prevProductIndex].description}</p>
         </div>
-        <div class="card">
+        <div class="card active">
             <img src="${products[currentIndex].image}" alt="${products[currentIndex].title}">
             <h3>${products[currentIndex].title}</h3>
             <p>${products[currentIndex].description}</p>
@@ -148,7 +151,7 @@ function updateSlider() {
         </div>
     `;
 
-    // Actualizar los bullets
+    // Actualiza también los bullets si los tienes implementados
     updateBullets();
 }
 
@@ -184,7 +187,7 @@ function moveRight() {
 
 window.onload = updateSlider;
 
-const slider = document.querySelector('.slider-container');
+/*const slider = document.querySelector('.slider-container');
 let isDown = false; // Indica si el mouse está presionado
 let startX; // Posición inicial del mouse
 let scrollLeft; // Posición de desplazamiento inicial
@@ -212,6 +215,36 @@ slider.addEventListener('mousemove', (e) => {
     const x = e.pageX - slider.offsetLeft; // Nueva posición del mouse
     const walk = (x - startX) * 2; // Cuánto desplazarse (ajusta la velocidad aquí)
     slider.scrollLeft = scrollLeft - walk; // Mover el scroll
-});
+});*/
 
+// Asegúrate de que este código solo se ejecute cuando estés en la sección de video
 
+function toggleMenu(element) {
+    const allTitles = document.querySelectorAll('.footer-bottom-mobile .footer-title');
+    
+    allTitles.forEach(title => {
+        const content = title.nextElementSibling;
+
+        if (title !== element) {
+            title.classList.remove('active');
+            const icon = title.querySelector('.icon');
+            icon.innerHTML = '<span class="material-symbols-rounded">add</span>'; // Cambia a '+' por defecto
+            content.style.maxHeight = '0';
+        }
+    });
+
+    // Toggle el elemento clicado
+    element.classList.toggle('active');
+    const icon = element.querySelector('.icon');
+    const content = element.nextElementSibling;
+
+    if (content.style.maxHeight === '0px' || !content.style.maxHeight) {
+        icon.innerHTML = '<span class="material-symbols-rounded">remove</span>'; // Cambia a '-' al abrir
+        content.style.maxHeight = content.scrollHeight + 'px';
+    } else {
+        icon.innerHTML = '<span class="material-symbols-rounded">add</span>'; // Cambia a '+' al cerrar
+        content.style.maxHeight = '0';
+    }
+}
+
+  
