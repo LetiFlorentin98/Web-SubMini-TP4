@@ -127,14 +127,15 @@ let products = [
 
 let currentIndex = 0;
 
+let startX, isDragging = false;
+
 function updateSlider() {
     const sliderContainer = document.querySelector(".slider-container");
     const prevProductIndex = (currentIndex - 1 + products.length) % products.length;
     const nextProductIndex = (currentIndex + 1) % products.length;
 
-    // Actualizar las cards con la clase `active` para el producto seleccionado
     sliderContainer.innerHTML = `
-    <div class="card">
+        <div class="card">
             <img src="${products[prevProductIndex].image}" alt="${products[prevProductIndex].title}">
             <h3>${products[prevProductIndex].title}</h3>
             <p>${products[prevProductIndex].description}</p>
@@ -151,7 +152,30 @@ function updateSlider() {
         </div>
     `;
 
-    // Actualiza también los bullets si los tienes implementados
+    // Evento de arrastre para la versión móvil
+    sliderContainer.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+
+    sliderContainer.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        const currentX = e.touches[0].clientX;
+        const diffX = currentX - startX;
+
+        if (diffX > 50) {
+            moveLeft(); // Desplaza hacia la izquierda
+            isDragging = false; // Evita más desplazamientos
+        } else if (diffX < -50) {
+            moveRight(); // Desplaza hacia la derecha
+            isDragging = false;
+        }
+    });
+
+    sliderContainer.addEventListener("touchend", () => {
+        isDragging = false;
+    });
+
     updateBullets();
 }
 

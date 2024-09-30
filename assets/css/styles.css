@@ -856,8 +856,13 @@ footer {
     gap: 20px;
 }
 
+.social-icons a{
+    width: 100%;
+    text-align: end;
+}
+
 .social-icons .icon-rrhh {
-    width: 15%;
+    width: 70%;
     transition: 0.25s ease-in-out;
 }
 
@@ -1448,7 +1453,7 @@ footer {
 
     .sonos-logo-footer {
         width: 80%;
-        margin: 0 auto 40px;
+        margin: 0 auto 80px;
     }
 
     .info-container {
@@ -1493,9 +1498,13 @@ footer {
         width: 100%;
     }
 
+    .social-icons a{
+        text-align: center;
+    }
+
     .social-icons .icon-rrhh {
         justify-content: space-evenly;
-        width: 8%;
+        width: 40%;
     }
 
     /**/
